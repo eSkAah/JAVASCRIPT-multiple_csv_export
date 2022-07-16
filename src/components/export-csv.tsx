@@ -76,7 +76,6 @@ export const ExportCsv = ({data}: IExportCsvProps) => {
             const label = Object.keys(csv)[0];
             const link = document.createElement('a');
             link.download = label;
-            // @ts-ignore
             let file = new File([csv[label]], label, {type: 'text/csv;charset=utf-8'});
             downloadableFiles.push(file);
             // link.href = URL.createObjectURL(file);
