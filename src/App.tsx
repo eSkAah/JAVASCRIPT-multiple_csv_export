@@ -17,18 +17,43 @@ export const App : FC = () => {
           {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Desktop Walls", plannedBudget: 541552},
         ]
       },
+      {
+        budgetId: "98765454-9876546-8798744",
+        id: "544111-66325-8744",
+        label: "Carriage",
+        lines: [
+          {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Bathroom", plannedBudget: 565654},
+          {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Room", plannedBudget: 4651651},
+          {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Bedrooms Walls", plannedBudget: 44845},
+          {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Outside Walls", plannedBudget: 225415},
+          {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Desktop Walls", plannedBudget: 365412},
+        ]
+      },
     {
       budgetId: "98765454-9876546-8798744",
       id: "544111-66325-8744",
-      label: "Carriage",
+      label: "House",
       lines: [
-        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Bathroom", plannedBudget: 565654},
-        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Room", plannedBudget: 4651651},
-        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Bedrooms Walls", plannedBudget: 44845},
-        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Outside Walls", plannedBudget: 225415},
-        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Desktop Walls", plannedBudget: 365412},
+        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Test1", plannedBudget: 565654},
+        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Test2", plannedBudget: 4651651},
+        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Test3", plannedBudget: 44845},
+        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Test4", plannedBudget: 225415},
+        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Test4", plannedBudget: 365412},
       ]
-    }
+    },
+    {
+      budgetId: "98765454-9876546-8798744",
+      id: "544111-66325-8744",
+      label: "Garden",
+      lines: [
+        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Test1", plannedBudget: 565654},
+        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Test2", plannedBudget: 4651651},
+        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Test3", plannedBudget: 44845},
+        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Test4", plannedBudget: 225415},
+        {budgetId: "98765454-9876546-8798744", id: "45sdf48-sdf841sd5df-sdf54sdf", label: "Test4", plannedBudget: 365412},
+      ]
+    },
+
   ];
 
   console.log(budgetData[0]);

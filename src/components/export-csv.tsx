@@ -1,3 +1,6 @@
+import JsZip from "jszip"
+import FileSaver from "file-saver";
+
 interface IExportCsvProps {
     data: any;
 }
@@ -18,7 +21,11 @@ interface ILine {
 
 export const ExportCsv = ({data}: IExportCsvProps) => {
 
-    const downloadableUrls = [];
+    let downloadableFiles: any[] = [];
+
+    //TODO : If platform = MacOs use comma, if Windows use / for csv
+    const platform = navigator?.userAgentData?.platform || navigator?.platform || "unknown";
+    console.log("OS :",platform)
 
     const objectToCsv = (data: any) => {
 
@@ -38,29 +45,45 @@ export const ExportCsv = ({data}: IExportCsvProps) => {
                 });
                 csvRows.push(values.join(','));
             }
-            console.log(csvRows);
-            csv.push(csvRows.join('\n'));
+            csv.push({[budget.label] : csvRows.join('\n')});
 
         });
 
         return csv
     }
+    const exportAsZip = (files:any) => {
+
+    const zip = new JsZip();
+    console.log(files)
+
+    files.forEach((file:any, index:number) => {
+        console.log(file);
+        zip.file(`${file.name}-${index}.csv`, file);
+    });
+    zip.generateAsync({type: 'blob'}).then(zipFile => {
+        const currentDate = new Date().getTime();
+        const fileName = `Financials-data-${currentDate}.zip`;
+        return FileSaver.saveAs(zipFile, fileName);
+    });
+}
+
 
     const handleDownload = () => {
-
         const csvData = objectToCsv(data);
-
         console.log("CSV DATA: ", csvData);
 
         csvData.forEach( (csv: any) => {
+            const label = Object.keys(csv)[0];
             const link = document.createElement('a');
-            link.download = csv.label;
+            link.download = label;
             // @ts-ignore
-            let file = new File([csvData], 'budget.csv', {type: 'text/csv;charset=utf-8'});
-            link.href = URL.createObjectURL(file);
-            link.click();
+            let file = new File([csv[label]], label, {type: 'text/csv;charset=utf-8'});
+            downloadableFiles.push(file);
+            // link.href = URL.createObjectURL(file);
+            // link.click();
         });
 
+        exportAsZip(downloadableFiles);
     }
 
     return(
